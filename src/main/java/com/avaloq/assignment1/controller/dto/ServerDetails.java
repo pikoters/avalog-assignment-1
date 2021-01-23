@@ -11,12 +11,10 @@ public class ServerDetails {
     private String serverTimeZone;
 
     public ServerDetails() {
-        Date now = new Date();
-        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm:ss");
-        this.serverTime = timeFormat.format(now);
+        this.serverTime = String.valueOf(System.nanoTime());
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-        this.serverDate = dateFormat.format(now);
-        this.serverTimeZone = Calendar.getInstance().getTimeZone().getDisplayName();
+        this.serverDate = dateFormat.format(new Date());
+        this.serverTimeZone = Calendar.getInstance().getTimeZone().getID();
     }
 
     public void setServerTime(String serverTime) {
