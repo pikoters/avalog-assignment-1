@@ -1,9 +1,9 @@
 package com.avaloq.assignment1.controller.dto;
 
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Objects;
 
 public class ServerDetails {
     private String serverTime;
@@ -11,7 +11,7 @@ public class ServerDetails {
     private String serverTimeZone;
 
     public ServerDetails() {
-        this.serverTime = String.valueOf(System.nanoTime());
+        this.serverTime = String.valueOf(Instant.now().getEpochSecond());
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         this.serverDate = dateFormat.format(new Date());
         this.serverTimeZone = Calendar.getInstance().getTimeZone().getID();
