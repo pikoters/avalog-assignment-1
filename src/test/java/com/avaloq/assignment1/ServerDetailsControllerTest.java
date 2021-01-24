@@ -18,7 +18,6 @@ public class ServerDetailsControllerTest {
     void shouldRetrieveServerDetails() throws Exception {
         this.mockMvc.perform(get("/server/details"))
                 .andExpect(status().isOk());
-//                .andExpect()
     }
 
 
